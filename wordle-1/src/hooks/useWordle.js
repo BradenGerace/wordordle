@@ -10,7 +10,26 @@ const useWordle = (solution) => {
     // format a guess into an array of letter objects 
     // e.g. [{key: 'a', color: 'yellow'}]
     const formatGuess = () => {
+      let solutionArray = [...solution]
+      let formattedGuess = [...currentGuess].map((l) => {
+        return {key: l, color: 'grey'}
+      })
 
+      formattedGuess.forEach((l, i) => {
+        if (solutionArray[i] === l.key) {
+          formattedGuess[i].color = 'green'
+          solutionArray[i] = null
+        }
+      })
+
+      formattedGuess.forEach((l, i) => {
+        if (solutionArray.includes(l.key) && l.color !== 'green') {
+          formattedGuess[i].color = 'yellow'
+          solutionArray[solutionArray.indexOf(l.key)] = null
+        }
+      })
+
+      return formattedGuess
     }
 
   // add a new guess to the guesses state
@@ -25,14 +44,18 @@ const useWordle = (solution) => {
   const handleKeyup = ({ key }) => {
     if (key === 'Enter') {
       if (turn > 5) {
-
+        console.log('out of guesses')
+        return
       }
       if (history.includes(currentGuess)) {
-
+        console.log('cannot guess a previous guess')
+        return
       }
       if (currentGuess.length !== 5) {
-        
+        console.log('word must be 5 chars long')
+        return
       }
+      formatGuess()
     }
     if (key === 'Backspace') {
       setCurrentGuess((prev) => {
