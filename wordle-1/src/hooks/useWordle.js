@@ -13,7 +13,7 @@ const useWordle = (solution) => {
     const formatGuess = () => {
       let solutionArray = [...solution]
       let formattedGuess = [...currentGuess].map((l) => {
-        return {key: l, color: 'grey'}
+        return {key: l.toLowerCase(), color: 'grey'}
       })
 
       formattedGuess.forEach((l, i) => {

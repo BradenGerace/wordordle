@@ -10,7 +10,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p className='solution'>{solution}</p>
                 <p>You found the solution in {turn} guesses!</p>
                 <form method="GET">
-                    <button name="data" onclick="return getData()">Click</button>
+                    <button name="data" onclick="return getData()">Play Again!</button>
                 </form>
             </div>
         )}
@@ -20,6 +20,9 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p>The word was: </p>
                 <p className='solution'>{solution}</p>
                 <p>Trash!</p>
+                <form method="GET">
+                    <button name="data" onclick="return getData()">Play Again!</button>
+                </form>
             </div>
         )}
     </div>
