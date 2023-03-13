@@ -5,6 +5,10 @@ body {
   margin: 0;
   background-color: rgb(255, 255, 255);
 }
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 h1 {
   font-size: 1.2em;
   padding: 20px 0;
