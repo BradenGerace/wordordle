@@ -3,18 +3,19 @@ body {
   font-size: 1em;
   font-family: verdana;
   margin: 0;
+  color: #eee;
+  background-color: rgb(20, 20, 20);
+}
+/* .dark-mode {
   background-color: rgb(255, 255, 255);
-}
-.dark-mode {
-  background-color: black;
-  color: white;
-}
+  color: rgb(21, 21, 21);
+} */
 h1 {
   font-size: 1.2em;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
   margin: 0 0 30px 0;
-  color: #333;
+  color: #ffffff;
 }
 /* rows */
 .row {
@@ -26,7 +27,7 @@ h1 {
   display: block;
   width: 60px;
   height: 60px;
-  border: 1px solid #bbb;
+  border: 1px solid #a7a7a7;
   margin: 4px;
   text-align: center;
   line-height: 60px;
@@ -45,8 +46,8 @@ h1 {
   animation: flip 0.5s ease forwards;
 }
 .row > div.yellow {
-  --background: #e2cc68;
-  --border-color: #e2cc68;
+  --background: #e0a503;
+  --border-color: #e0a503;
   animation: flip 0.5s ease forwards;
 }
 .row > div:nth-child(2) {
@@ -79,7 +80,7 @@ h1 {
   margin: 5px;
   width: 40px;
   height: 50px;
-  background: #eee;
+  background: #a9a9a9;
   display: inline-block;
   border-radius: 6px;
   line-height: 50px;
@@ -90,12 +91,12 @@ h1 {
   transition: all 0.3s ease-in;
 }
 .keypad > div.yellow {
-  background: #e2cc68;
+  background: #e0a503;
   color: #fff;
   transition: all 0.3s ease-in;
 }
 .keypad > div.grey {
-  background: #a1a1a1;
+  background: #585858;
   color: #fff;
   transition: all 0.3s ease-in;
 }
@@ -110,7 +111,7 @@ h1 {
 
 .modal div {
   max-width: 480px;
-  background: #fff;
+  background: #1a1a1a;
   padding: 40px;
   border-radius: 10px;
   margin: 10% auto;
@@ -127,13 +128,13 @@ h1 {
 @keyframes flip {
   0% {
     transform: rotateY(0);
-    background: white;
-    border-color: #333;
+    background: rgb(18, 18, 18);
+    border-color: #ffffff;
   }
   45% {
     transform: rotateY(90deg);
-    background: white;
-    border-color: #333;
+    background: rgb(18, 18, 18);
+    border-color: #ffffff;
   }
   55% {
     transform: rotateY(90deg);
@@ -150,14 +151,14 @@ h1 {
 @keyframes bounce {
   0% {
     transform: scale(1);
-    border-color: #ddd;
+    border-color: #bbbbbb;
   }
   50% {
     transform: scale(1.2);
   }
   100% {
     transform: scale(1);
-    border-color: #333;
+    border-color: #ebebeb;
   }
 }
 
