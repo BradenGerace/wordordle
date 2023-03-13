@@ -37,7 +37,7 @@ const useWordle = (solution) => {
   // update the isCorrect state if the guess is correct
   // add one to the turn state
   const addNewGuess = (formattedGuess) => {
-    if (currentGuess === solution) {
+    if (currentGuess.toLowerCase() === solution) {
       setIsCorrect(true)
     }
     setGuesses(prevGuesses => {
@@ -46,7 +46,7 @@ const useWordle = (solution) => {
       return newGuesses
     })
     setHistory(prevHistory => {
-      return [...prevHistory, currentGuess]
+      return [...prevHistory, currentGuess.toLowerCase()]
     })
     setTurn(prevTurn => {
       return prevTurn + 1
