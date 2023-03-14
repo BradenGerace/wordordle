@@ -81,15 +81,23 @@ const useWordle = (solution) => {
   const handleKeyup = ({ key }) => {
     if (key === 'Enter') {
       if (turn > 5) {
+        document.getElementById('tip').innerHTML = "Out of Guesses";
         console.log('out of guesses')
         return
       }
       if (history.includes(currentGuess)) {
+        document.getElementById('tip').innerHTML = "Cannot guess a previous guess";
         console.log('cannot guess a previous guess')
         return
       }
       if (currentGuess.length !== 5) {
+        document.getElementById('tip').innerHTML = "Word must be 5 letters";
         console.log('word must be 5 chars long')
+        return
+      }
+      if (!solutions.includes(currentGuess)) {
+        document.getElementById('tip').innerHTML = "Word not in dictionary";
+        console.log('word not containted in dictionary')
         return
       }
       const formatted = formatGuess()

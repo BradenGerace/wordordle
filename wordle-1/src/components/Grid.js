@@ -10,6 +10,8 @@ export default function Grid({ currentGuess, guesses, turn }) {
         }
         return <Row key={i} guess={g} />
       })}
+      <p id="tip"></p>
     </div>
+    
   )
 }
