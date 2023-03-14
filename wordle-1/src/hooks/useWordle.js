@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { WORDS } from '../WORDS'
+import { words } from '../bigwords.js'
 
 const useWordle = (solution) => {
     const [turn, setTurn] = useState(0) 
     const [currentGuess, setCurrentGuess] = useState('')
-    const [guesses, setGuesses] = useState([...Array(6)]) // each guess is an array
+    const [guesses, setGuesses] = useState([...Array(10)]) // each guess is an array
     const [history, setHistory] = useState([]) // each guess is a string
     const [isCorrect, setIsCorrect] = useState(false)
     const [usedKeys, setUsedKeys] = useState({})
@@ -81,7 +81,7 @@ const useWordle = (solution) => {
   // if user presses enter, add the new guess
   const handleKeyup = ({ key }) => {
     if (key === 'Enter') {
-      if (turn > 5) {
+      if (turn > 9) {
         document.getElementById('tip').innerHTML = "Out of Guesses";
         console.log('out of guesses')
         return
@@ -91,12 +91,12 @@ const useWordle = (solution) => {
         console.log('cannot guess a previous guess')
         return
       }
-      if (currentGuess.length !== 5) {
-        document.getElementById('tip').innerHTML = "Word must be 5 letters";
+      if (currentGuess.length !== 10) {
+        document.getElementById('tip').innerHTML = "Word must be 10 letters";
         console.log('word must be 5 chars long')
         return
       }
-      if (!WORDS.includes(currentGuess)) {
+      if (words.includes(currentGuess)) {
         document.getElementById('tip').innerHTML = "Word not in dictionary";
         console.log('word not containted in dictionary')
         return
@@ -112,7 +112,7 @@ const useWordle = (solution) => {
     }
 
     if (/^[A-Za-z]$/.test(key)) {
-      if (currentGuess.length < 5) {
+      if (currentGuess.length < 10) {
         setCurrentGuess((prev) => {
           return prev + key
         })
