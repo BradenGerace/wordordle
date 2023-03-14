@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { WORDS } from '../WORDS'
 
 const useWordle = (solution) => {
     const [turn, setTurn] = useState(0) 
@@ -95,7 +96,7 @@ const useWordle = (solution) => {
         console.log('word must be 5 chars long')
         return
       }
-      if (!solutions.includes(currentGuess)) {
+      if (!WORDS.includes(currentGuess)) {
         document.getElementById('tip').innerHTML = "Word not in dictionary";
         console.log('word not containted in dictionary')
         return
