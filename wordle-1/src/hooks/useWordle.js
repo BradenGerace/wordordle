@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { words } from '../bigwords.js'
+// import words from '../wordlist'
 
 const useWordle = (solution) => {
     const [turn, setTurn] = useState(0) 
@@ -96,11 +96,11 @@ const useWordle = (solution) => {
         console.log('word must be 5 chars long')
         return
       }
-      if (words.includes(currentGuess)) {
+      /* if (!(words.includes(currentGuess))) {
         document.getElementById('tip').innerHTML = "Word not in dictionary";
-        console.log('word not containted in dictionary')
+        console.log('word not contained in dictionary')
         return
-      }
+      } */
       const formatted = formatGuess()
       addNewGuess(formatted)
     }
