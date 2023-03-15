@@ -1,2 +1,2 @@
-# wordle-clone
+# wordordle
  
