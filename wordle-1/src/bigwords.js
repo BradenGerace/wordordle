@@ -1,4 +1,4 @@
-var words = [
+export var words = [
     {"id": 1, "word": "abbreviate"},
     {"id": 2, "word": "bamboozled"},
     {"id": 3, "word": "calculator"},
