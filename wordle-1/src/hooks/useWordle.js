@@ -93,12 +93,12 @@ const useWordle = (solution) => {
       }
       if (currentGuess.length !== 10) {
         document.getElementById('tip').innerHTML = "Word must be 10 letters";
-        console.log('word must be 5 chars long')
+        console.log('word must be 10 letters')
         return
       }
       if (!(words.find(w => w.word === currentGuess))) {
         document.getElementById('tip').innerHTML = "Word not in dictionary";
-        console.log('word not contained in dictionary')
+        console.log('word not in dictionary')
         return
       }
       const formatted = formatGuess()
