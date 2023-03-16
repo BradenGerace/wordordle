@@ -1,0 +1,255 @@
+body {
+  text-align: center;
+  font-size: 1em;
+  font-family: verdana;
+  margin: 0;
+  color: #eee;
+  background-color: rgb(20, 20, 20);
+}
+/* .dark-mode {
+  background-color: rgb(255, 255, 255);
+  color: rgb(21, 21, 21);
+} */
+h1 {
+  font-size: 4.0em;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  margin: 0 0 30px 0;
+  color: #ffffff;
+}
+/* rows */
+.row {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.row > div {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #bbbbbb;
+  margin: 4px;
+  text-align: center;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.row > div.green {
+  --background: #5ac85a;
+  --border-color: #5ac85a;
+  animation: flip 0.5s ease forwards;
+}
+.row > div.grey {
+  --background: #a1a1a1;
+  --border-color: #a1a1a1;
+  animation: flip 0.5s ease forwards;
+}
+.row > div.yellow {
+  --background: #e0a503;
+  --border-color: #e0a503;
+  animation: flip 0.5s ease forwards;
+}
+.row > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.row > div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.row > div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.row > div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+.row > div:nth-child(6) {
+  animation-delay: 1.0s;
+}
+.row > div:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.row > div:nth-child(8) {
+  animation-delay: 1.4s;
+}
+.row > div:nth-child(9) {
+  animation-delay: 1.6s;
+}
+.row > div:nth-child(10) {
+  animation-delay: 1.8s;
+}
+
+.row.current > div.filled {
+  animation: bounce 0.15s ease-in-out forwards;
+}
+
+.div.empty {
+  animation: shrink 0.15s ease-in-out forwards;
+}
+
+.keypad {
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.keypad > div {
+  margin: 5px;
+  border-top: 40px;
+  border-bottom: 20px;
+  width: 40px;
+  height: 50px;
+  background: #a9a9a9;
+  display: inline-block;
+  border-radius: 6px;
+  line-height: 50px;
+}
+.keypad > div.green {
+  background: #5ac85a;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > div.yellow {
+  background: #e0a503;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.keypad > div.grey {
+  background: #585858;
+  color: #fff;
+  transition: all 0.3s ease-in;
+}
+.modal {
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.modal div {
+  max-width: 480px;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  margin: 10% auto;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.modal .solution {
+  color: rgb(34, 138, 34);
+  font-weight: bold;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0);
+    background: rgb(18, 18, 18);
+    border-color: #bbbbbb;
+  }
+  45% {
+    transform: rotateY(90deg);
+    background: rgb(18, 18, 18);
+    border-color: #bbbbbb;
+  }
+  55% {
+    transform: rotateY(90deg);
+    background: var(--background);
+    border-color: var(--border-color);
+  }
+  100% {
+    transform: rotateY(0);
+    background: var(--background);
+    border-color: var(--border-color);
+    color: white;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    border-color: #bbbbbb;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    border-color: #ebebeb;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+    border-color: #333;
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+    border-color: #ddd;
+  }
+}
