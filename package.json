@@ -1,12 +1,23 @@
 {
-  "name": "wordle-clone",
+  "homepage": "http://bradengerace.github.io/wordordle",
+  "name": "wordordle",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "deploy": "^1.0.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
+  }
 }
